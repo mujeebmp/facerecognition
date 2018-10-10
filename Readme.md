@@ -1,4 +1,5 @@
 Project Title
+
 This is a human face, emotion and aga detection software by using OpenCV, Amazon Recokgnition, Amazon S3, Amazon db. The software use raspberry pi hardware and raspberri pi standard camera
 
 Getting Started
