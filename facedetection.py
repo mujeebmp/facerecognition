@@ -9,7 +9,7 @@ import os
 import subprocess
 from botocore.client import ClientError
 
-
+#this path should change to your local drive
 faceCascade = cv2.CascadeClassifier('/home/pi/opencv-3.0.0/data/haarcascades/haarcascade_frontalface_alt.xml')
 
 # initialize the camera and grab a reference to the raw camera capture
@@ -18,6 +18,7 @@ camera.resolution = (640, 480)
 camera.framerate = 30
 rawCapture = PiRGBArray(camera, size=(640, 480))
 
+#use boto to connet to amazon cloud
 s3client = boto3.client('s3')
 s3resource = boto3.resource('s3')
 dbclient = boto3.resource('dynamodb')
@@ -25,11 +26,12 @@ table = dbclient.Table('FacecollectionSL01')
 client = boto3.client('rekognition','eu-west-1')
 
 
-
+#a flag to see if the entry is firt time or not
 firsttimeflag = True
 
 bucket_name = 'bucketforrekognition'
 
+#uncomment this to intialiasw amazon s3 bucket
 
 #client.delete_collection(CollectionId = 'myhomephotos')
 #client.create_collection (CollectionId = 'myhomephotos')
