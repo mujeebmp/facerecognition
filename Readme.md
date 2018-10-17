@@ -5,6 +5,7 @@ This is a human face, emotion and age  detection software by using OpenCV, Amazo
 Getting Started
 
 Install OpenvCV 2.0 in raspberry pi. Connect camera, use below script to check camera working or not
+
 from picamera import PiCamera
 from time import sleep
 
